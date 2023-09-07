@@ -1,0 +1,36 @@
+type Book {
+  title: String
+  author: Person
+}
+
+type Person {
+  name: String!,
+  phone: String,
+  city: String!
+  country: String!
+  address: Address!
+  books: [Book]!
+  id: ID!
+}
+type Address {
+  city: String!
+  country: String!
+}
+
+type Query {
+  personCount: Int!
+  allPersons: [Person]!
+  findPerson (
+    id: ID!
+  ): Person!
+  allBooks: Book!
+}
+
+type Mutation {
+  addPerson (
+    name:String! 
+    phone: String! 
+    city: String! 
+    country: String!
+  ): Person
+}
